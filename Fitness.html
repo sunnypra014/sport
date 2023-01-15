@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+     <!--Google font-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,
+    wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,
+    800&display=swap" rel="stylesheet">
+    <!--Awesome Fonts-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+     <title> Fitness </title>
+
+     <style>
+         *{
+             box-sizing: content-box;
+             margin: 0;
+             padding: 0;
+             list-style-type: none;
+             text-align: none;
+             text-transform: capitalize;
+             transition: all 0.3s linear;
+             outline: none;
+         }
+    *::selection{
+            background-color: yellowgreen;
+            color: #fff;
+    }     
+    body{
+        font-family: 'Open Sans', sans-serif;
+    }
+    /*start header*/
+    header{
+        width: 100%;
+        height: 100vh;
+        background-image: url("https://4kwallpapers.com/images/wallpapers/workout-limitless-endurance-gym-colorful-smoke-3556x2000-929.jpg");
+        background-position: centre;
+        background-size: cover;
+        clip-path: polygon(100% 0, 100% 89%, 49% 100%, 0 92%, 0 0);
+
+    }
+    nav{
+        padding: 2% 6%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        
+    }
+    nav .logo{
+        font-size: 3rem;
+        cursor: pointer;
+    }
+    nav .logo span{
+        color: yellowgreen;
+    }
+    nav .links{
+        padding-left: 0;
+    }
+    nav .links li{
+        display: inline-block;
+        margin-left: 1rem;
+        font-size: 1.5rem;
+    }
+    nav .links li a{
+        color: rgb(255, 255, 255);
+    }
+    .links .active{
+        color: yellowgreen;
+    }
+    nav .links li a:hover{
+        color: yellowgreen;
+    }
+    header .content{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }
+    header .content h1{
+        font-size: 8rem;
+        text-transform: uppercase;
+        color: tomato;
+    }
+    .btn{
+        padding:0.5rem  1.5rem;
+        background-color: transparent;
+        border: 0.3rem solid yellowgreen;
+        color: yellowgreen;
+        margin-top: 1.8rem;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        font-size: 2rem;
+    }
+    .btn:hover{
+        background-color: yellow;
+        color: #fff;
+    }
+    nav .open,.close{
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: yellowgreen;
+        display: none;
+    }
+    @media (max-width:850px) {
+        nav .links{
+            height: 25rem;
+            width: 60%;
+            position: fixed;
+            top: 0;
+            right:0;
+            border-radius: 1.2rem;
+            background-color: #fff;
+            display: none;
+            justify-content: center;
+            align-centre;
+            flex-direction: column;
+            z-index: 9999;
+         }
+         nav .links li{
+             font-size: 1.8rem;
+             margin: 0.5rem;
+          }
+          nav .links li a{
+              color: #000;
+          }
+          nav .open,nav .links .close{
+              display: block;
+              position: absolute;
+              top: 1.8rem;
+              right: 1.8rem;
+          }
+          header .content h1{
+              font-size: 6rem;
+          }
+    }
+    /*start*/
+    .about .row{
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 2% 6%;
+    }
+
+    .about .row .image{
+        flex: 1 1 40rem;
+        padding: 2rem;
+    }
+    .about .row .image .img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .about .row .content{
+        flex: 1 1 40rem;
+        padding: 2rem;
+        text-align: center ;
+    }
+    .about .row .content h1{
+        font-size: 3rem;
+        color:black;
+        margin-bottom: 5r;
+    }
+    .about .row .content p{
+        line-height: 1.7;
+        font-size: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    /*star service*/
+    .Services{
+        min-height: 100vh;
+        text-align:center;
+        padding: 2% 6%;
+    }
+    .Services h1{
+        font-size: 3.8rem;
+        padding: 0.5rem;
+        display: inline-block;
+        color: yellowgreen;
+        border-bottom: .3rem  solid  yellowgreen;
+        margin-bottom: 1.8rem;
+    }
+    .Services .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align:center;
+        flex-wrap: wrap;
+    }
+    .Services .container .box{
+        width: 31rem;
+        height: 31rem;
+        margin: .5rem;
+        position: relative;
+        overflow: hidden;
+
+    }
+    .Services .container .box img{
+        width:100%;
+        height:100%;
+        object-fit: cover;
+    }
+    .Services .container .box .info{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transform-origin: bottom;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .Services .container .box:hover .info{
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+    .Services .container .box .info h3{
+        font-size: 3rem;
+        color: rgb(57, 8, 189);
+        margin-bottom: 1.2rem;
+        
+    }
+    .Services .container .box .info p{
+        line-height: 2;
+        color: #fff;
+        font-size: 1.1rem;
+        padding: 0 1rem;
+        margin-bottom: 1.2rem;
+    }
+    /*trainer*/
+    .Trainers{
+        min-height: 100vh;
+        text-align:center;
+        padding: 2% 6%;
+
+    }
+    .Trainers h4{
+        font-size: 3.8rem;
+        padding: 0.5rem;
+        display: inline-block;
+        color: yellowgreen;
+        border-bottom: .3rem  solid  yellowgreen;
+        margin-bottom: 1.8rem;
+
+    }
+    .Trainers p{
+        font-size: 1.5rem;
+        color: #333;
+    }
+    .Trainers .item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .Trainers .item .item{
+        height: 40rem;
+        width: 24rem;
+        margin: 5rem 1rem;
+    }
+    .Trainers .item img{
+        width: 100%;
+        height: 100%;
+        border-radius: .6rem;
+        object-fit: cover;
+    }
+    .Trainers .item .inner{
+        position: relative;
+        z-index: 9999;
+        padding: 0 1rem;
+    }
+    .Trainers .item .inner:hover{
+        transform: translate(-20px);
+    }
+    .Trainers .item .inner .info{
+        background-color: yellow;
+        padding: 1.2rem 1rem;
+        border-radius: 0.6rem;
+        margin-top: -2.5rem;
+    }
+    .Trainers .item:hover .inner .info{
+        transform: translate(-30px);
+
+    }
+    .Trainers .item .inner .info h4{
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin: 0;
+        color: black;
+    }
+    .Trainers .item .inner .info .p{
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: #333;
+        margin-top: .6rem;
+    }
+    .Trainers .item .inner .info .links{
+        margin-top: 1rem;
+    }
+    .Trainers .item .inner .info .links a{
+        display: inline-block;
+        height: 2rem;
+        width: 2rem;
+        background-color: #fff;
+        border-radius: 50%;
+        color: yellowgreen;
+        text-align: center;
+        line-height: 2rem;
+        margin-left: 0.3rem;
+        font-size: 1.1rem;
+
+    }
+    .Trainers .item .inner .info .links a:hover{
+        box-shadow: 0 0  .6rem #000;
+    }
+
+    /*plan*/
+    .pricing_table{
+        min-height: 100vh;
+        padding: 2% 6%;
+        text-align: center;
+    }
+    .pricing_table h1{
+        font-size: 3.8rem;
+        padding: 0.5rem;
+        display: inline-block;
+        color: yellowgreen;
+        border-bottom: .3rem  solid  yellowgreen;
+        margin-bottom: 2.2rem;
+
+    }
+    .pricing_table .pricing_card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .pricing_card .pricing_box{
+        width: 20rem;
+        box-shadow: 2px 2px 6px #000;
+        margin-bottom: 3rem;
+    }
+    .pricing_card .pricing_box:hover{
+        transform: translate(-30px);
+    }
+    .pricing_box h2{
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        background-color: rgb(235, 37, 2);
+        padding: 1.2rem;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+    }
+    .pricing_box h3{
+        margin-top: 2rem;
+        font-size: 4rem;
+        color:yellow;
+    }
+    .pricing_box h3 sup{
+        font-size: 2rem;
+    }
+    .pricing_box h3 span{
+        font-size: 2.5rem;
+    }
+    .pricing_box p{
+        font-size: 2.5rem;
+        color: tomato;
+    }
+    .pricing_box ul{
+        padding: 2rem;
+    }
+    .pricing_box ul li{
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+    }
+    .pricing_box .btn{
+        margin-bottom: 2rem;
+    }
+    
+    
+/*Contact Section*/
+h1{
+    font-size: 50;
+    font-weight: 800;
+    color: yellowgreen;
+    padding: 0px 0px 20px;
+    text-align: center;
+
+}
+
+.contact{
+	padding:80px 0px;
+	background-color: #222222;
+}
+
+.contact .content{
+	-webkit-display: flex;
+	display: flex;
+}
+
+.contact .content .box{
+	flex:0 0 50%;
+	max-width: 50%;
+	padding: 15px;
+}
+
+.contact .content .form input,
+.contact .content .form textarea{
+ height: 45px;
+ width: 100%;
+ padding:6px 12px;
+ margin-bottom: 25px;
+ background-color: transparent;
+ border:1px solid #ffffff;
+ font-family: 'Open-sans',sans-serif;
+ color:#ffffff;
+}
+.contact .content .form input:focus,
+.contact .content .form textarea:focus{
+ outline: none;
+}
+.contact .content .form input::placeholder,
+.contact .content .form textarea::placeholder{
+	color:#ffffff;
+}
+.contact .content .form textarea{
+	height: 100px;
+}
+
+.contact .content .form button{
+	border:none;
+	outline: none;
+	box-shadow: none;
+	height: 45px;
+	padding:0px 50px;
+	border:1px solid transparent;
+	background-color: #c11325;
+	color:#ffffff;
+	font-size: 15px;
+	transition: all .5s ease;
+	cursor: pointer;
+}
+.contact .content .form button:hover{
+	background-color:transparent;
+	color:#ffffff; 
+    border-color:#ffffff;
+}
+
+.contact .content .text h2{
+	font-size: 30px;
+    font-weight: 500;
+    color: #c11325;
+    padding: 0px 0px 20px;
+}
+.contact .content .text p{
+    font-size: 15px;
+    line-height: 20px;
+    color: #ffffff;
+    margin: 0;
+    padding: 0px 0px 30px;
+    font-family: 'Open-sans', sans-serif;
+}
+
+.contact .content .text .info ul{
+	list-style: none;
+	padding:0;
+	margin:0;
+}
+
+.contact .content .text .info li{
+	display: block;
+	margin-bottom: 15px;
+	color:#ffffff;
+	font-size: 15px;
+	letter-spacing: 1px;
+	position: relative;
+	padding-left: 40px;
+	font-family: 'Open-Sans',sans-serif;
+}
+.contact .content .text .info li span{
+	display: inline-block;
+	position: absolute;
+	left:0px;
+	top:0px;
+	font-size: 20px;
+	color:#c11325;
+}
+.contact .content .text .social {
+	padding-top: 30px;
+}
+.contact .content .text .social a{
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	text-align: center;
+	background-color: #c11325;
+    text-decoration: none;	
+    display: inline-block;
+    margin-right: 10px;
+    transition: all .5s ease;
+    border:1px solid transparent;
+} 
+
+.contact .content .text .social a:hover{
+	background-color: transparent;
+    border-color: #ffffff;
+}
+
+.contact .content .text .social a span{
+	color:#ffffff;
+	font-size: 20px;
+}
+
+.contact .content .text .copy{
+	border-top:1px solid #333333;
+	margin-top: 30px;
+	padding-top: 20px;
+	color:#c5c5c5;
+	font-size: 15px;
+}
+ 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+     
+
+    
+    
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+     </style>
+ </head> 
+ 
+ <body>
+     <header>
+         <nav>
+             <div class="logo">VI<span>P</span></div>
+             <div class="open"><i class="fas fa-bars"></i></div>
+             <ul class="links">
+                 <li><a herf="#" class="active">Home</a></li>
+                 <li><a herf="#">About</a></li>
+                 <li><a herf="#">Services</a></li>
+                 <li><a herf="#">Trainer</a></li>
+                 <li><a herf="#">Plan</a></li>
+                 <li><a herf="#">Register</a></li>
+                 <li><a herf="#">Workout Gallery</a></li>
+                 <div class="close"><i class="fas fa-times"></i></div>
+             </ul>
+         </nav>
+         <div class="content">
+             <h1>Fitness Gym</h1>
+             <button class="btn">Get Started</button>
+         </div>
+     </header>
+     <!-- start About-->
+     <section class="about">
+         <div class="row">
+             <div class="image">
+                <img src="https://i.pinimg.com/originals/6f/fc/b7/6ffcb7234c3ab006ed54f022450c7c02.jpg">
+             </div>
+             <div class="content">
+                 <h1>ALL ABOUT US</h1>
+                 <p> lorfhifhf ffhheifhf  fbfhjff j fhfw ffjfkjvv vv jknfkj fjkf kjfn  vkjnvj vjnvdsnkhbfkjvv vnivjv fa v  knnvknvnmff wnc  kjn  vv n vjkvkfnfnj</p>
+                 <p> nkdbjkdde mnnkfnn  kjnfiovv  joivjo  voiijp9wifvknidhuc vbufrrv u nviuvhb  viuhijdhfoijofi7fr8rv vv dndnnjdd </p>
+                 <button class="btn">LEARM MORE</button>
+             </div>
+         </div>
+
+
+
+
+
+
+
+
+
+     </section>
+     <!--start service-->
+     <section class="Services">
+         <h1> our service</h1>
+         <div class="container">
+             <div class="box">
+                 <img src="https://thumbs.dreamstime.com/b/angry-athlete-trains-gym-big-76487806.jpg">
+                 <div class="info">
+                     <h3>Lorem </h3>
+                         <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam 
+                             facilis sapiente
+                              a aperiam ullam numquam nobis officia doloribus temporibus. Accusantium.</p>
+                              <button class="btn">Get Started</button>
+
+                     
+                 </div>
+             </div>
+             <div class="box">
+                <img src="https://thumbs.dreamstime.com/b/angry-athlete-trains-gym-big-76487806.jpg">
+                <div class="info">
+                    <h3>Lorem </h3>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam facilis sapiente
+                             a aperiam ullam numquam nobis officia doloribus temporibus. Accusantium.</p>
+                             <button class="btn">Get Started</button>
+
+                    
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                <div class="info">
+                    <h3>Lorem </h3>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam facilis sapiente
+                             a aperiam ullam numquam nobis officia doloribus temporibus. Accusantium.</p>
+                             <button class="btn">Get Started</button>
+
+                    
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                <div class="info">
+                    <h3>Lorem.</h3>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam facilis sapiente
+                             a aperiam ullam numquam nobis officia doloribus temporibus. Accusantium.</p>
+                             <button class="btn">Get Started</button>
+
+                    
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                <div class="info">
+                    <h3>Lorem </h3>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam facilis sapiente
+                             a aperiam ullam numquam nobis officia doloribus temporibus. Accusantium.</p>
+                             <button class="btn">Get Started</button>
+
+                    
+                </div>
+            </div>
+            <div class="box">
+                <img src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+                <div class="info">
+                    <h3>Lorem </h3>
+                        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam facilis sapiente
+                             a aperiam ullam numquam nobis officia doloribus temporibus. Accusantium.</p>
+                             <button class="btn">Get Started</button>
+
+                    
+                </div>
+            </div>
+         </div>
+     </section>
+
+     <!--start Trainers-->
+     <section class="Trainers">
+         <h4>Our Trainer</h4>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore odit
+              natus odio debitis reiciendis ipsam facere sit explicabo est consequuntur!</p>
+            <div class="item">
+                <div class="item">
+                    <img src="https://www.mensjournal.com/wp-content/uploads/2019/11/GobletRevLunge.jpg?w=1080&quality=86&strip=all">
+                    <div class="inner">
+                        <div class="info">
+                            <h4> JOHN</h4>
+                            <p> online coach</p>
+                            <div class="links">
+                                <a herf="#"><i class="fab fa-facebook"></i></a>
+                                <a herf="#"><i class="fab fa-twitter"></i></a>
+                                <a herf="#"><i class="fab fa-whatsapp"></i></a>
+                                <a herf="#"><i class="fab fa-instagram"></i></a>
+                                
+                            </div>
+  
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://www.mensjournal.com/wp-content/uploads/2019/11/GobletRevLunge.jpg?w=1080&quality=86&strip=all">
+                    <div class="inner">
+                        <div class="info">
+                            <h4> JOHN</h4>
+                            <p> online coach</p>
+                            <div class="links">
+                                <a herf="#"><i class="fab fa-facebook"></i></a>
+                                <a herf="#"><i class="fab fa-twitter"></i></a>
+                                <a herf="#"><i class="fab fa-whatsapp"></i></a>
+                                <a herf="#"><i class="fab fa-instagram"></i></a>
+                                
+                            </div>
+  
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://www.mensjournal.com/wp-content/uploads/2019/11/GobletRevLunge.jpg?w=1080&quality=86&strip=all">
+                    <div class="inner">
+                        <div class="info">
+                            <h4> JOHN</h4>
+                            <p> online coach</p>
+                            <div class="links">
+                                <a herf="#"><i class="fab fa-facebook"></i></a>
+                                <a herf="#"><i class="fab fa-twitter"></i></a>
+                                <a herf="#"><i class="fab fa-whatsapp"></i></a>
+                                <a herf="#"><i class="fab fa-instagram"></i></a>
+                                
+                            </div>
+  
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+     </section>
+     <!--START PLAN-->
+     <section class="pricing_table">
+         <h1>Our Plan</h1>
+         <div class="pricing_card">
+             <div class="pricing_box">
+                <h2>Basic</h2>
+                <h3><sup>$</sup>20<span>/mo</span></h3>
+                <p>1 month</p>
+                <ul>
+                    <li><i class="fas fa-check"></i>Weight lifting</li>
+                    <li><i class="fas fa-check"></i>Cardio</li>
+                    <li><i class="fas fa-check"></i>Yoga</li>
+                    <li><i class="fas fa-check"></i>Traing</li>
+                    <li><i class="fas fa-check"></i>Protein Powder</li>
+                </ul>
+                <button class="btn">Cheak Out</button>
+             </div>
+                                  
+             
+         </div>
+         <div class="pricing_card">
+            <div class="pricing_box">
+               <h2>Standard</h2>
+               <h3><sup>$</sup>50<span>/mo</span></h3>
+               <p>3 month</p>
+               <ul>
+                   <li><i class="fas fa-check"></i>Weight lifting</li>
+                   <li><i class="fas fa-check"></i>Cardio</li>
+                   <li><i class="fas fa-check"></i>Yoga</li>
+                   <li><i class="fas fa-check"></i>Traing</li>
+                   <li><i class="fas fa-check"></i>Protein Powder</li>
+               </ul>
+               <button class="btn">Cheak Out</button>
+            </div>
+                                 
+            
+        </div>
+        <div class="pricing_card">
+            <div class="pricing_box">
+               <h2>Premiun</h2>
+               <h3><sup>$</sup>100<span>/mo</span></h3>
+               <p>6 month</p>
+               <ul>
+                   <li><i class="fas fa-check"></i>Weight lifting</li>
+                   <li><i class="fas fa-check"></i>Cardio</li>
+                   <li><i class="fas fa-check"></i>Yoga</li>
+                   <li><i class="fas fa-check"></i>Traing</li>
+                   <li><i class="fas fa-check"></i>Protein Powder</li>
+               </ul>
+               <button class="btn">Cheak Out</button>
+            </div>
+                                 
+            
+        </div>
+         
+        </div>
+     </section>
+
+      <!-- Start Contact -->
+
+  <section class="contact" id="contact">
+    <div class="container">
+       <div class="content">
+           <div class="box form wow slideInLeft">
+              <form>
+                 <input type="text" placeholder="Enter Name">
+                 <input type="text" placeholder="Enter Email">
+                 <input type="text" placeholder="Enter Mobile">
+                 <textarea placeholder="Enter Message"></textarea>
+                 <button type="submit">Send Message</button>
+              </form>
+           </div>
+           <div class="box text wow slideInRight">
+               <h1> CONTACT US</h1>
+                <h2>Get Connected with Gym</h2>
+                 <p class="title-p">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                 <div class="info">
+                     <ul>
+                         <li><span class="fa fa-map-marker"></span> Gali no 11, House no 11, New Delhi</li>
+                         <li><span class="fa fa-phone"></span> 91 9999999999</li>
+                         <li><span class="fa fa-envelope"></span> info@gym.com</li>
+                     </ul>
+                 </div>
+                 <div class="social">
+                    <a herf="#"><span class="fab fa-facebook"></span></a>
+                    <a herf="#"><span class="fab fa-twitter"></span></a>
+                    <a herf="#"><span class="fab fa-whatsapp"></span></a>
+                    <a herf="#"><span class="fab fa-instagram"></span></a>
+                    
+                </div>
+
+                 
+           </div>
+       </div>
+    </div>
+ </section>
+<!-- End Contact -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <!--javascript section-->
+     <script>
+        var mainMenu = document.querySelector('.links')
+        var openMenu = document.querySelector('.open')
+        var closeMenu = document.querySelector('.close')
+
+        openMenu.addEventListener('click', show)
+        closeMenu.addEventListener('click', close)
+
+        function show(){
+            mainMenu.style.display = 'flex'
+            mainMenu.style.right = '0'
+        }
+        function close(){
+            mainMenu.style.right = '-60%'
+        }
+   </script>
+
+
+     
+        
+
+
+
+     
+     
+ </body>
+</html>
